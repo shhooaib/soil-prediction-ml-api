@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Type Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Soil Type Prediction</h1>
+            <p>Enter the agricultural parameters to predict the soil type</p>
+        </div>
+
+        <form id="predictionForm" class="form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="temperature">Temperature (°C)</label>
+                    <input type="number" id="temperature" name="temperature" step="0.1" required placeholder="e.g., 26.0">
+                </div>
+
+                <div class="form-group">
+                    <label for="humidity">Humidity (%)</label>
+                    <input type="number" id="humidity" name="humidity" step="0.1" required placeholder="e.g., 52.0">
+                </div>
+
+                <div class="form-group">
+                    <label for="moisture">Moisture (%)</label>
+                    <input type="number" id="moisture" name="moisture" step="0.1" required placeholder="e.g., 38.0">
+                </div>
+
+                <div class="form-group">
+                    <label for="cropType">Crop Type</label>
+                    <select id="cropType" name="cropType" required>
+                        <option value="">Select Crop Type</option>
+                        <option value="Maize">Maize</option>
+                        <option value="Sugarcane">Sugarcane</option>
+                        <option value="Cotton">Cotton</option>
+                        <option value="Tobacco">Tobacco</option>
+                        <option value="Paddy">Paddy</option>
+                        <option value="Barley">Barley</option>
+                        <option value="Wheat">Wheat</option>
+                        <option value="Millets">Millets</option>
+                        <option value="Oil seeds">Oil seeds</option>
+                        <option value="Pulses">Pulses</option>
+                        <option value="Ground Nuts">Ground Nuts</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nitrogen">Nitrogen</label>
+                    <input type="number" id="nitrogen" name="nitrogen" required placeholder="e.g., 37">
+                </div>
+
+                <div class="form-group">
+                    <label for="potassium">Potassium</label>
+                    <input type="number" id="potassium" name="potassium" required placeholder="e.g., 0">
+                </div>
+
+                <div class="form-group">
+                    <label for="phosphorous">Phosphorous</label>
+                    <input type="number" id="phosphorous" name="phosphorous" required placeholder="e.g., 0">
+                </div>
+
+                <div class="form-group">
+                    <label for="fertilizerName">Fertilizer Name</label>
+                    <select id="fertilizerName" name="fertilizerName" required>
+                        <option value="">Select Fertilizer</option>
+                        <option value="Urea">Urea</option>
+                        <option value="DAP">DAP</option>
+                        <option value="14-35-14">14-35-14</option>
+                        <option value="28-28">28-28</option>
+                        <option value="17-17-17">17-17-17</option>
+                        <option value="20-20">20-20</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Predict Soil Type</span>
+                <span class="btn-loader" style="display: none;">⏳ Predicting...</span>
+            </button>
+        </form>
+
+        <div id="result" class="result" style="display: none;">
+            <div class="result-content">
+                <h2>Predicted Soil Type</h2>
+                <div class="soil-type" id="soilType"></div>
+            </div>
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            <div class="error-content">
+                <h3>⚠️ Error</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
